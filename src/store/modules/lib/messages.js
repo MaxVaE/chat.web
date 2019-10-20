@@ -9,7 +9,7 @@ export default () => ({
     list: [
       new MessageModel({
         id: '1',
-        from: 'Garry',
+        from: 'Noname',
         text: 'Hey! How\'s it going?',
         timestamp: new Date('2019-09-30 19:58:33')
       })

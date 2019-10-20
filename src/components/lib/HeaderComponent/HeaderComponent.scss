@@ -2,7 +2,8 @@
 @import 'src/styles/variables';
 
 .root-header-component {
+	@include flex(center, center, center);
 	height: 100px;
 	color: $color-white;
-	background-color: $color-grey;
+	background-color: $color-green;
 }

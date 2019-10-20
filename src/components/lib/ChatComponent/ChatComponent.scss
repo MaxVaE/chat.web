@@ -12,19 +12,45 @@
 		color: $color-dark-grey;
 		margin: 24px;
 		background-color: $color-white;
+		word-break: break-all;
+		.message {
+			@include flex(column, space-between, flex-start);
+			flex-wrap: nowrap;
+			padding: 2px 15px;
+			overflow-x: hidden;
+			.message-from {
+				font-weight: bold;
+				color: $color-blue;
+				padding: 0 10px;
+				width: 5px;
+			}
+			.message-text {
+				white-space: pre-wrap;
+				padding: 0 0 0 82px;
+			}
+			.message-time {
+				font-weight: lighter;
+				padding: 0 5px;
+				color: $color-grey;
+			}
+		}
 	}
 	.controls {
 		@include flex(row, flex-start, center);
 		margin: 24px;
 		.controls-text {
-			height: 100px;
+			height: 60px;
 			width: 80%;
 			resize: none;
+			border-radius: 10px;
+			padding: 5px 15px 0;
+			// font-size: 5;
 		}
 		.controls-button {
-			height: 100px;
+			height: 50px;
 			width: 15%;
 			margin-left: auto;
+			border-radius: 50px;
 		}
 	}
 }

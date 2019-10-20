@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { HomePage } from 'src/pages'
+import { HomePage, ChatPage } from 'src/pages'
 
 Vue.use(Router)
 
@@ -12,6 +12,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: HomePage
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: ChatPage
     }
   ]
 })

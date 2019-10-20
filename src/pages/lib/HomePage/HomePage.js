@@ -1,10 +1,9 @@
-import { ChatComponent, HeaderComponent, FooterComponent } from 'src/components'
+import { HeaderComponent, FooterComponent } from 'src/components'
 
 export default {
   components: {
     FooterComponent,
-    HeaderComponent,
-    ChatComponent
+    HeaderComponent
   },
   data () {
     return {

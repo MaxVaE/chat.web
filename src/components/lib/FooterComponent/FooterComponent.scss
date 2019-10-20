@@ -2,7 +2,8 @@
 @import 'src/styles/variables';
 
 .root-footer-component {
+	@include flex(row-reverse, row-reverse, flex-end);
 	height: 100px;
 	color: $color-white;
-	background-color: $color-grey;
+	background-color: $color-red;
 }
