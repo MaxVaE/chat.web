@@ -1,4 +1,3 @@
-/* eslint-disable */
 import axios from 'axios'
 import ButtonAccount from '@/components/lib/ButtonAccount/ButtonAccount.vue'
 
@@ -9,8 +8,8 @@ export default {
   data () {
     return {
       obj: {
-        Email: "",
-        Password: ""
+        Email: '',
+        Password: ''
       },
       bool: true
     }
@@ -23,15 +22,34 @@ export default {
   },
   methods: {
     validateEmail (email) {
+      // eslint-disable-next-line no-useless-escape
       const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       console.log(re.test(email))
       return re.test(email)
     },
-    login () {
+    Enter (e) {
+      if (e.keyCode === 13 && !e.shiftKey) {
+        e.preventDefault()
+        this.login()
+      }
+    },
+    login: async function () {
       if (!this.bool) {
         if (this.validateEmail(this.obj.Email)) {
-          axios
-            .post('URL', this.obj)
+          const getObj = {
+            'Email': this.obj.Email,
+            'Password': this.obj.Password
+          }
+          try {
+            const { status } = await axios
+              .get('URL', getObj)
+            if (status === 200) {
+              console.log('Good Job')
+            }
+          } catch (error) {
+            console.log('status = ', status)
+            console.log(error)
+          }
         }
       }
     }
